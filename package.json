@@ -1,0 +1,20 @@
+{
+  "name": "LifeBox",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "version": "0.0.0-24",
+  "engines": {
+    "node": "0.10.x"
+  },
+  "dependencies": {
+    "express": "*",
+    "jade": "*",
+	 "mongoose": "*",
+	 "zombie": "*"
+  },
+  "repository":{
+	  "type":"git",
+	  "url":"git://taggartagents.com"
+  }
+}
