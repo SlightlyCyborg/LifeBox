@@ -12,6 +12,6 @@
 
 
 app.js
-./views/index.ejs
-./rouge/
-./nodemodules
+views/index.ejs
+rouge/
+nodemodules/
