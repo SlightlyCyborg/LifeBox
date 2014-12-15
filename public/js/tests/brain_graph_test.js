@@ -29,7 +29,7 @@ describe('brain_graph', function(){
 			it('should draw svg circles on the page for each node', function(){
 									//TEST DOCUMENT FOR SVG CIRCLES.
 					expect($('#node0').length).to.be.ok;
-					expect($('#node0').attr('cx')).to.equal('450');
+					expect($('#node0').attr('cx')).to.equal('650');
 					expect($('#node0').attr('cy')).to.equal('250');
 					expect($('#node1').length).to.be.ok;
 					//expect(($('#node1').attr('cx')<1)).to.be.ok;
@@ -78,8 +78,8 @@ describe('brain_graph', function(){
 			it('should generate an array that is nx2 that has the coordinates of evenly radialy spaced radia', function(){
 				expect(brain.node_circle(0).length).to.equal(0);
 				expect(brain.node_circle(1).length).to.equal(1);
-				expect(brain.node_circle(1)[0]).to.deep.equal([450,250]);
-				expect(brain.node_circle(2)[1][0]).to.equal(50);
+				expect(brain.node_circle(1)[0]).to.deep.equal([650,250]);
+				expect(brain.node_circle(2)[1][0]).to.equal(250);
 			});
 		});
 		describe('NodeSpeaker', function(){

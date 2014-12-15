@@ -1,0 +1,45 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+<html>
+  <head>
+    <title>chat</title>
+	<script src="vendor/jquery-2.1.1.js"></script>
+	<script src="js/d3/d3.min.js"></script>
+	<link rel='stylesheet' media='all' href='vendor/mocha.css'>
+  </head>
+  <body>
+	  <div id="mocha"><p><a href=".">Index</a></p></div>
+	  <div id="messages"></div>
+	  <div id="fixtures"></div>
+	  <div id="chat_box">
+		  <div id="past_chat"></div>
+			<p id='last_sentance'></p> 
+	  </div>
+	  <p id="NodeSpeaker"></p>
+	  <div id="NodeSpeaker_play_array"></div>
+	  <form onsubmit="return false;"	id='input_form'>
+		  Input: <input type='text' id='user_input'>
+		  <input type='submit' value='Go'>
+	  </form>
+	  <script src="vendor/underscore.js"></script>
+	  <script src="vendor/mocha.js"></script>
+	  <script src="vendor/chai.js"></script>
+	  <script src="js/brain.js"></script>
+	  <script>mocha.setup('bdd')</script>
+	  <script src="js/chat.js"></script>
+	  <script src="js/tests/chat_test.js"></script>
+	  <script>mocha.run();</script>
+	  <svg width="1000" height="1000" id="d3">
+	  </svg>
+	  <audio controls>
+		  <source src='speak.mp3' type='audio/mpeg'>
+	  </audio>
+  </body>
+</html>

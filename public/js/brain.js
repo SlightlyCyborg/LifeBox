@@ -28,7 +28,40 @@ function draw(data,cb){
 	 .attr('cy', function(d,i){
 		 return node_circle_array[i][1];
 	 })
-	  .attr('r', 20);
+	  .attr('r', 20)
+  	 .attr('stroke', 'black')
+	  .attr('stroke-width', '2') 
+	 .on('click', function(d, i){
+		 var node = d3.select('#d3').select('#node'+ i.toString())
+			 console.log(node.attr('fill'));
+		 var text = d3.select('#d3').select('#text'+ i.toString());
+		 var color = 'white'
+			 if (node.attr('fill') == color){
+				node.attr('fill','black');
+				node.attr('r', 20);
+				text.attr('y', node_circle_array[i][1]+50);
+				
+			 } else {
+				node.attr('fill', color);
+				node.attr('r', 100);
+				text.attr('y', node_circle_array[i][1]+150);
+
+			 }
+	 });
+
+	d3.select('#d3').selectAll("text").
+		data(nodes)
+	.enter().append("text")
+		.attr('x', function(d,i){
+			return node_circle_array[i][0];
+		})
+	.attr('y', function(d,i){
+		return node_circle_array[i][1] + 50;
+	})
+	.attr('id', function(d, i){
+		return "text" + i.toString();
+	})
+	.text(function(d){return d});
 
 	//Create Lines
 	d3.select('#d3').selectAll('line')
@@ -56,7 +89,7 @@ function draw(data,cb){
 	  })
 	.attr('style', "stroke:rgb(255,0,0);stroke-width:2" );
 
-
+		
 		
 
 	cb()
@@ -67,7 +100,7 @@ function node_circle(numNodes){
 	var deg_seperation = 360 / numNodes;
 	var rv = []
 	for (i=0; i<numNodes; i++){
-		rv.push([radius*Math.cos(toDegrees(i*deg_seperation))+250,
+		rv.push([radius*Math.cos(toDegrees(i*deg_seperation))+450,
 					radius*Math.sin(toDegrees(i*deg_seperation))+250
 		])
 	}
